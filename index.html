@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aadarsh Workout</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	color:white;
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	background-color: black;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+a{
+	color: yellow;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="warm-up">Warm Up</h1>
+<blockquote>
+<p>20 reps for each warm up exercise. These exercises can also be used for Cooldown.</p>
+</blockquote>
+<ul>
+<li><a href="https://fitnessprogramer.com/exercise/arm-circles/#:~:text=HOW%20TO%20DO%20PERFORM%20ARM%20CIRCLES">Arm Circles</a></li>
+<li><a href="https://fitnessprogramer.com/exercise/leg-swings-front-to-back/#:~:text=HOW%20TO%20PERFORM%20LEG%20SWINGS%20FRONT%20TO%20BACK">Leg Swings</a></li>
+<li><a href="https://fitnessprogramer.com/exercise/jumping-jack/?pw=78075#:~:text=EXERCISE%20/%20CARDIO%2C%20LEG-,HOW%20TO%20JUMPING%20JACK,-JUMPING%20JACK%20BENEFITS">Jumping Jacks</a></li>
+<li><a href="https://hips.hearstapps.com/hmg-prod/images/mh40-sprinterslungewithrotation-1663184716.jpg">Spiderman Lunges</a></li>
+<li><a href="https://fitnessprogramer.com/exercise/inchworm/#:~:text=EXERCISE%20/%20ABS-,HOW%20TO%20DO%20INCHWORM,-Step%201%3A%C2%A0">Inchworm</a></li>
+<li><a href="https://fitnessprogramer.com/exercise/duck-walk/#:~:text=EXERCISE%20/%20HIP%2C%20LEG-,HOW%20TO%20DO%20DUCK%20WALK,-PREVIEW">Duck Walk</a></li>
+<li><a href="https://i.pinimg.com/originals/02/b6/2b/02b62b7ee1484dcb9331297658803a9f.gif">Exercise Bike</a></li>
+</ul>
+<h1 id="strength-training">Strength Training</h1>
+<h3 id="warmup-sets">Warmup Sets</h3>
+<ul>
+<li>Warmup Set 1: Lightest Weight * 19</li>
+<li>Warmup Set 2: Working Weight * 5</li>
+<li>Warmup Set 2: Working Weight * 3</li>
+</ul>
+<h2 id="push-exercises---monday">Push Exercises - Monday</h2>
+<h3 id="chest-exercises">Chest Exercises</h3>
+<h4 id="dumbbell-bench-press"><a href="https://fitnessprogramer.com/exercise/dumbbell-press/#:~:text=of%20individual%20dumbbells.-,HOW%20TO%20DO%3A,-Setup%3A">Dumbbell Bench Press</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Bench Press * 8 (slow &amp; steady)</li>
+<li>Set 2: Bench Press * 5 (faster)</li>
+<li>Set 3: Bench Press * 15 (slow &amp; steady)</li>
+</ul>
+<p>Note: If you want to focus on growth of upper chest, perform the press on inclined bench</p>
+<h4 id="dumbbell-chest-fly"><a href="https://fitnessprogramer.com/exercise/dumbbell-fly/#:~:text=HOW%20TO%20PERFORM%20A%20DUMBBELL%20FLY%3A">Dumbbell Chest Fly</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Chest Press * 8 (slow &amp; steady)</li>
+<li>Set 2: Chest Press * 5 (faster)</li>
+<li>Set 3: Chest Press * 15 (slow &amp; steady)</li>
+</ul>
+<p>Note: If you want to focus on growth of upper chest, perform the fly on inclined bench</p>
+<h3 id="shoulder-exercises">Shoulder Exercises</h3>
+<h4 id="dumbbell-shoulder-press"><a href="https://fitnessprogramer.com/exercise/dumbbell-shoulder-press/#:~:text=HOW%20TO%20PERFORM%20THE%20DUMBBELL%20SHOULDER%20PRESS">Dumbbell Shoulder Press</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Shoulder Press * 10</li>
+<li>Set 2: Shoulder Press * 12</li>
+<li>Set 3: Shoulder Press * 10</li>
+</ul>
+<p>Note: Dumbbell Shoulder Press may be performed on inclined bench for better endurance. Hence, you can push the sets closer to failure.</p>
+<h4 id="dumbbell-front-raise"><a href="https://fitnessprogramer.com/exercise/dumbbell-front-raise/#:~:text=HOW%20TO%20DUMBBELL%20FRONT%20RAISE">Dumbbell Front Raise</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Front Raise * 8</li>
+<li>Set 2: Front Raise * 5</li>
+<li>Set 3: Front Raise * 15</li>
+</ul>
+<p>Note: Front Raises train the mid delt more than front as front delts already get trained from other exercises.</p>
+<h3 id="tricep-exercises">Tricep Exercises</h3>
+<h4 id="seated-dumbbell-triceps-extension"><a href="https://fitnessprogramer.com/exercise/seated-dumbbell-triceps-extension/#:~:text=HOW%20TO%20PERFORM%20THE%20SEATED%20DUMBBELL%20TRICEPS%20EXTENSION">Seated Dumbbell Triceps Extension</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Tricep Extension * 10</li>
+<li>Set 2: Tricep Extension * 8</li>
+<li>Set 3: Tricep Extension * 10</li>
+</ul>
+<p>Note: You may choose to go with lower reps with heavier weights for building Tricep strength.</p>
+<h4 id="cable-rear-drive"><a href="https://fitnessprogramer.com/exercise/cable-rear-drive/#:~:text=HOW%20TO%20PERFORM%20THE%20CABLE%20REAR%20DRIVE">Cable Rear Drive</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Cable Rear Drive * 10</li>
+<li>Set 2: Cable Rear Drive * 8</li>
+<li>Set 3: Cable Rear Drive * 10</li>
+</ul>
+<p>Note: This is a Hypertrophy exercise for Triceps. You can perform more reps for this exercise.</p>
+<h4 id="diamond-pushups"><a href="https://fitnessprogramer.com/exercise/diamond-push-up/?pw=78245#:~:text=HOW%20TO%20PERFORM%20THE%20DIAMOND%20PUSH%2DUP">Diamond Pushups</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Diamond Pushups till failure</li>
+</ul>
+<p>Note: Builds Stronger Triceps; Strengthens the Chest and Shoulders; Enhances Core Stability</p>
+<h2 id="pull-exercises---wednesday">Pull Exercises - Wednesday</h2>
+<h3 id="back-exercises">Back Exercises</h3>
+<h4 id="dumbbell-kroc-rows"><a href="https://fitnessprogramer.com/exercise/dumbbell-row/#:~:text=HOW%20TO%20DO%20PERFORM%20DUMBBELL%20ROW">Dumbbell Kroc Rows</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Kroc Row * 8 (slow &amp; steady)</li>
+<li>Set 2: Kroc Row * 5 (faster)</li>
+<li>Set 3: Kroc Row * 15 (slow &amp; steady)</li>
+</ul>
+<p>Note: Targets the lats, rhomboids, and traps to build a stronger, wider back.</p>
+<h4 id="v-bar-lat-pulldown"><a href="https://fitnessprogramer.com/exercise/v-bar-lat-pulldown/#:~:text=V%2Dshaped%20appearance.-,HOW%20TO%20DO%3A,-Grasp%20the%20V">V-bar Lat Pulldown</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Lat Pulldown * 8 (slow &amp; steady)</li>
+<li>Set 2: Lat Pulldown * 5 (faster)</li>
+<li>Set 3: Lat Pulldown * 15 (slow &amp; steady)</li>
+</ul>
+<p>Note: Regularly incorporating this exercise into your workout routine can help you achieve a more defined and sculpted back, creating the appearance of a wider upper body.</p>
+<h4 id="seated-cable-rows"><a href="https://fitnessprogramer.com/exercise/seated-cable-row/#:~:text=your%20training%20program.-,HOW%20TO%20DO%3A,-Proper%20posture%20is">Seated Cable Rows</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Cable Row * 8 (slow &amp; steady)</li>
+<li>Set 2: Cable Row * 5 (faster)</li>
+<li>Set 3: Cable Row * 15 (slow &amp; steady)</li>
+</ul>
+<p>Note: Seated cable rows are a great choice for those who are looking to improve their posture, as they engage the muscles responsible for maintaining a strong and stable upper back.</p>
+<h3 id="bicep-exercises">Bicep Exercises</h3>
+<h4 id="waiter-curls"><a href="https://fitnessprogramer.com/exercise/waiter-curl/?pw=99002#:~:text=HOW%20TO%20PERFORM%20THE%20WAITER%20CURL">Waiter Curls</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Waiter Curl * 8 (slow &amp; steady)</li>
+<li>Set 2: Waiter Curl * 5 (faster)</li>
+<li>Set 3: Waiter Curl * 15 (slow &amp; steady)</li>
+</ul>
+<p>Note: Tension in Biceps is maintained. Forearms get more stable.</p>
+<h4 id="dumbbell-curls"><a href="https://fitnessprogramer.com/exercise/dumbbell-curl/?pw=99002#:~:text=balanced%20muscle%20development.-,HOW%20TO%20DO%3A,-Here%20are%20some">Dumbbell Curls</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Dumbbell Curl * 8 (slow &amp; steady)</li>
+<li>Set 2: Dumbbell Curl * 5 (faster)</li>
+<li>Set 3: Dumbbell Curl * 15 (slow &amp; steady)</li>
+</ul>
+<p>Note: Inhale as you lower the weight and exhale as you curl the weight towards your shoulder.</p>
+<h4 id="concentration-curl"><a href="https://fitnessprogramer.com/exercise/concentration-curl/?pw=99002#:~:text=after%20heavier%20lifting.-,HOW%20TO%20DO%3A,-To%20perform%20a">Concentration Curl</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Concentration Curl * 8 (slow &amp; steady)</li>
+<li>Set 2: Concentration Curl * 5 (faster)</li>
+<li>Set 3: Concentration Curl * 15 (slow &amp; steady)</li>
+</ul>
+<p>Note: Exhale as you curl the weight up, and inhale as you lower it down.</p>
+<h2 id="leg-exercises---friday">Leg Exercises - Friday</h2>
+<h4 id="dumbbell-goblet-squats"><a href="https://fitnessprogramer.com/exercise/dumbbell-goblet-squat/?pw=99003#:~:text=HOW%20TO%20PERFORM%20DUMBBELL%20GOBLET%20SQUAT">Dumbbell Goblet Squats</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Goblet Squat * 8 (slow &amp; steady)</li>
+<li>Set 2: Goblet Squat * 5 (faster)</li>
+<li>Set 3: Goblet Squat * 15 (slow &amp; steady)</li>
+</ul>
+<p>Note: Stand with feet shoulder-width apart, toes slightly turned out.</p>
+<h4 id="plie-dumbbell-squats"><a href="https://fitnessprogramer.com/exercise/sumo-plie-dumbbell-squat/?pw=99003#:~:text=HOW%20TO%20PERFORM%20PLIE%20DUMBBELL%20SQUAT">Plie Dumbbell Squats</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Plie Squat * 8 (slow &amp; steady)</li>
+<li>Set 2: Plie Squat * 5 (faster)</li>
+<li>Set 3: Plie Squat * 15 (slow &amp; steady)</li>
+</ul>
+<p>Note: Push your knees outward in line with your toes to avoid collapsing inward. This exercise targets the inner thighs and is effective for muscle tone and hypertrophy.</p>
+<h4 id="dumbbell-straight-leg-deadlift"><a href="https://fitnessprogramer.com/exercise/dumbbell-straight-leg-deadlift/?pw=99003#:~:text=HOW%20TO%3A%20DUMBBELL%20STRAIGHT%20LEG%20DEADLIFT">Dumbbell Straight Leg Deadlift</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Deadlift * 8 (slow &amp; steady)</li>
+<li>Set 2: Deadlift * 5 (faster)</li>
+<li>Set 3: Deadlift * 15 (slow &amp; steady)</li>
+</ul>
+<p>Note: Dumbbell straight leg deadlift targets all the muscles responsible for your posture and helps keep your back straight during daily activities.</p>
+<h4 id="leg-extensions"><a href="https://fitnessprogramer.com/exercise/leg-extension/?pw=99003#:~:text=perform%20leg%20extensions%3A-,HOW%20TO%20DO%3A,-Set%20the%20leg">Leg Extensions</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Leg Extension * 8 (slow &amp; steady)</li>
+<li>Set 2: Leg Extension * 5 (faster)</li>
+<li>Set 3: Leg Extension * 15 (slow &amp; steady)</li>
+</ul>
+<p>Note: This exercise can help improve knee joint stability and potentially reduce the risk of knee-related injuries.</p>
+<h4 id="leg-press"><a href="https://fitnessprogramer.com/exercise/leg-press/?pw=99003#:~:text=can%20be%20added.-,HOW%20TO%20DO%3A,-Adjust%20the%20seat">Leg Press</a></h4>
+<h5 id="working-sets">Working Sets</h5>
+<ul>
+<li>Set 1: Leg Press * 8 (slow &amp; steady)</li>
+<li>Set 2: Leg Press * 5 (faster)</li>
+<li>Set 3: Leg Press * 15 (slow &amp; steady)</li>
+</ul>
+<p>Note: The Leg Press can help increase your speed and ability to accelerate.</p>
+<h1 id="high-intensity-interval-training--core-training">High Intensity Interval Training + Core Training</h1>
+<h4 id="jump-rope"><a href="https://post.healthline.com/wp-content/uploads/2022/06/HL-05.02.JumpRope.gif">Jump Rope</a></h4>
+<ul>
+<li>Set 1 to Set 10: Skipping for 1 minute &amp; Rest for 30 seconds</li>
+</ul>
+<p>Note: Jump rope is an accessible, full-body cardio exercise that offers significant physical and mental benefits, including burning calories and fat quickly, improving cardiovascular health, increasing bone density, enhancing coordination and balance, boosting agility and speed, and sharpening cognitive function and mental sharpness. It's a versatile and fun workout that engages multiple muscle groups and can help reduce stress and improve overall well-being.</p>
+<h4 id="high-knees"><a href="https://dsdwiki.wtb.tue.nl/images/High-knees-exericse.gif">High Knees</a></h4>
+<ul>
+<li>Set 1 to Set 4: High Knees * 50</li>
+</ul>
+<p>Note: High knees benefit your overall fitness by improving cardiovascular health, strengthening lower-body and core muscles, and boosting coordination and agility. This versatile exercise burns calories, increases lower-body endurance, and serves as an effective warm-up for more intense workouts.</p>
+<h4 id="jumping-jacks"><a href="https://fitnessprogramer.com/exercise/jumping-jack/?pw=78075#:~:text=EXERCISE%20/%20CARDIO%2C%20LEG-,HOW%20TO%20JUMPING%20JACK,-JUMPING%20JACK%20BENEFITS">Jumping Jacks</a></h4>
+<ul>
+<li>Set 1 to Set 4: Jumping Jack * 50</li>
+</ul>
+<p>Note: Jumping jacks provide numerous health benefits, including improving cardiovascular health by strengthening the heart and increasing blood circulation, boosting metabolism and aiding in weight management, and enhancing bone density by being a weight-bearing exercise. They also serve as a convenient full-body workout, toning arms, legs, and core muscles, and can positively impact mood by releasing endorphins.</p>
+<h4 id="shoulder-taps"><a href="https://www.inspireusafoundation.org/file/2023/10/shoulder-tap.gif">Shoulder Taps</a></h4>
+<ul>
+<li>Set 1 to Set 4: Shoulder Tap * 50</li>
+</ul>
+<p>Note: Shoulder taps are beneficial for improving core strength and stability, enhancing balance and coordination, increasing shoulder stability and mobility, promoting good posture, and serving as an effective exercise for warming up or adding a full-body challenge to workouts. This exercise engages various muscles, including the abs, obliques, and shoulder stabilizer muscles, to build a stronger, more stable body.</p>
+<h4 id="air-squats"><a href="https://homeworkouts.org/wp-content/uploads/anim-air-squat.gif">Air Squats</a></h4>
+<ul>
+<li>Set 1 to Set 4: Air Squat * 50</li>
+</ul>
+<p>Note: Air squats, a bodyweight exercise, offer numerous benefits including improved lower body strength, enhanced balance and mobility, and increased calorie burn. They primarily target the quadriceps, hamstrings, and glutes, while also engaging the core and improving posture. Air squats are a great foundational exercise for more advanced squat variations and can be easily modified for different fitness levels.</p>
+<h4 id="mountain-climbers"><a href="https://i.pinimg.com/originals/18/27/be/1827be178c019b1dc6f8a8d8b4a7b0b8.gif">Mountain Climbers</a></h4>
+<ul>
+<li>Set 1 to Set 4: Mountain Climber * 50</li>
+</ul>
+<p>Note: Mountain climbers provide a full-body, low-impact workout that strengthens the core, arms, shoulders, glutes, and legs. This exercise boosts cardiovascular endurance, burns calories, and can help reduce body fat while improving balance and posture. By engaging multiple large muscle groups, mountain climbers enhance overall muscle tone and improve functional fitness for everyday activities and sports.</p>
+<h1 id="workout-tips">Workout Tips</h1>
+<ul>
+<li>Never perform HIIT right before or after strength training. HIIT causes muscle loss while burning instant calories.</li>
+<li>Keep HIIT workout session under 20 minutes.</li>
+<li>Eat low calorie &amp; quick digesting food items before workout. 2 Bananas is a good example.</li>
+<li>Always ensure performing warmup exercises before starting and cooldown exercises after completing any kind of training.</li>
+</ul>
+
+</body>
+</html>
